@@ -16,7 +16,7 @@ $old = getFlash('old') ?? [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo CREAR SRL</title>
+    <title>AK SIENNA SL</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <!-- FAVICON -->
@@ -32,10 +32,10 @@ $old = getFlash('old') ?? [];
         <header class="mi_encabezado">
             <div class="cabecera_logo">
                 <div class="contenedor_logo">
-                    <img src="../assets/images/logo.png" alt="logo Grupo Crear SRL">
+                    <img src="../assets/images/logo4.png" alt="logo AK SIENNA SL">
 
                     <div class="contenedor_empresa">
-                        <h1>Grupo CREAR SRL</h1>
+                        <h1>AK SIENNA SL</h1>
                         <p class="texto_logo">Instalaciones - Construcciones</p>
                     </div>
                 </div>
@@ -49,6 +49,7 @@ $old = getFlash('old') ?? [];
 
                 <ul class="navigationBarList">
                     <li><a class="enlace" href="../index.php">Inicio</a></li>
+                    <li><a class="enlace" href="./empresa.php">Empresa</a></li>
                     <li><a class="enlace" href="./galeria.php">Galería</a></li>
                     <li><a class="enlace active" href="#">Contacto</a></li>
                     <li><a class="enlace" href="./preguntas_frecuentes.php">Preguntas</a></li>
@@ -107,37 +108,28 @@ $old = getFlash('old') ?? [];
 
                         <div class="datos_contacto">
                             <div class="flex_row">
-                                <img src="../assets/iconos/clock.svg" alt="horario atención Grupo CREAR SRL">
+                                <img src="../assets/iconos/clock.svg" alt="horario atención AK SIENNA SL">
                                 <span>Horario de atención:</span>
                                 <p>Lunes a Viernes de 8hs a 18hs</p>
                             </div>
                             <div class="flex_row">
-                                <img src="../assets/iconos/whatsapp-green.svg" alt="telefono Grupo CREAR SRL">
+                                <img src="../assets/iconos/whatsapp-green.svg" alt="telefono AK SIENNA SL">
                                 <span>Teléfonos:</span>
                                 <ul>
                                     <li>
-                                        <a href="https://wa.me/5491168719855" target="_blank">1168719855</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://wa.me/5491149933740" target="_blank">1149933740</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://wa.me/5491156662924" target="_blank">1156662924</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://wa.me/5491122631311" target="_blank">1122631311</a>
+                                        <a href="https://wa.me/34602550278" target="_blank">(+34) 602550278</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="flex_row">
-                                <img src="../assets/iconos/email.svg" alt="correo Grupo CREAR SRL">
+                                <img src="../assets/iconos/email.svg" alt="correo AK SIENNA SL">
                                 <span>Email:</span>
-                                <a href="mailto:grupocrear@live.com">grupocrear@live.com</a>
+                                <a href="mailto:proyectos@aksiennasl.com.es">proyectos@aksiennasl.com.es</a>
                             </div>
                             <div class="flex_row">
-                                <img src="../assets/iconos/location.svg" alt="ubicacion Grupo CREAR SRL">
+                                <img src="../assets/iconos/location.svg" alt="ubicacion AK SIENNA SL">
                                 <span>Ubicación:</span>
-                                <p>San Miguel - Bs. As.</p>
+                                <p>Jijona / Xixona - Alicante</p>
                             </div>
 
                         </div>
@@ -201,52 +193,48 @@ $old = getFlash('old') ?? [];
 
         </main>
         <!-- PIE DE PÁGINA-->
-        <footer class="mi_pie">
+<footer class="mi_pie">
 
             <div class="contenedor_footer">
 
                 <!-- TELEFONOS Y CORREO -->
                 <div class="contacto_pie">
-                    <div class="contacto_flex_row">
-                        <img class="iconos" src="../assets/iconos/whatsapp-green.svg  " alt="telefono Grupo CREAR SRL" width="30" height="30">
-                        <ul>
-                            <li>
-                                <a href="https://wa.me/5491168719855" target="_blank">1168719855</a>
-                            </li>
-                            <li>
-                                <a href="https://wa.me/5491149933740" target="_blank">1149933740</a>
-                            </li>
-                            <li>
-                                <a href="https://wa.me/5491156662924" target="_blank">1156662924</a>
-                            </li>
-                            <li>
-                                <a href="https://wa.me/5491122631311" target="_blank">1122631311</a>
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>
+                            <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="telefono AK SIENNA SL" width="30" height="30">
+                            <a href="https://wa.me/34602550278" target="_blank">(+34) 602550278</a>
+                        </li>
+                        <li>
+                            <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
+                            <a href="mailto:proyectos@aksiennasl.com.es">proyectos@aksiennasl.com.es</a>
+                        </li>
+                    </ul>
+                </div>
 
+                <!-- LOGO AK SIENNA SL -->
+                <div>
+                    <div class="logo_pie">
+                        <img src="../assets/images/logo4.png" alt="logo AK SIENNA SL">
+                        <div>
+                            <p>AK SIENNA SL</p>
+                            <span>Instalaciones - Construcciones</span>
+                            <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+                        </div>
                     </div>
 
                 </div>
 
-                <!-- LOGO GRUPO CREAR SRL -->
-                <div class="logo_pie">
-                    <img src="../assets/images/logo.png" alt="logo Grupo CREAR SRL">
-                    <div>
-                        <p>Grupo CREAR SRL</p>
-                        <span>Instalaciones - Construcciones</span>
-                    </div>
-                </div>
-
-                <!-- AVISO LEGAL COPYRIGHT -->
-                <div class="contacto_pie_email">
-                    <div class="contacto_flex_row">
-                        <img class="iconos" src="../assets/iconos/email.svg" alt="correo Grupo CREAR SRL" width="94" height="32">
-                        <a href="mailto:grupocrear@live.com">grupocrear@live.com</a>
-                    </div>
-                    <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+                <!-- NAVBAR PIE -->
+                <div class="navbar_pie">
+                    <ul>
+                        <li><a class="enlace" href="../index.php">Inicio</a></li>
+                        <li><a class="enlace" href="./empresa.php">Empresa</a></li>
+                        <li><a class="enlace" href="./galeria.php">Galería</a></li>
+                        <li><a class="enlace" href="#">Contacto</a></li>
+                        <li><a class="enlace" href="./preguntas_frecuentes.php">Preguntas</a></li>
+                    </ul>
                 </div>
             </div>
-
         </footer>
 
 
