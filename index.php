@@ -13,7 +13,11 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK SIENNA SL</title>
+    <title>Inicio | AK SIENNA SL</title>
+    <meta
+        name="description"
+        content="AK SIENNA SL realiza construcciones e instalaciones eléctricas industriales y residenciales, montaje de cuadros eléctricos y mantenimiento para empresas y particulares.">
+    <!--<link rel="canonical" href="https://TU-DOMINIO.com/">-->
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/estilos.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -42,36 +46,14 @@ if (session_status() == PHP_SESSION_NONE) {
 
             <nav class="navigationBar">
 
-                <?php if (isset($_SESSION["user_data"])): ?>
-                    <input type="checkbox" id="check_menu" class="check_menu">
-                <?php endif; ?>
-
                 <ul class="navigationBarList">
                     <li><a class="enlace active" href="#">Inicio</a></li>
                     <li><a class="enlace" href="./views/empresa.php">Empresa</a></li>
                     <li><a class="enlace" href="./views/galeria.php">Galería</a></li>
                     <li><a class="enlace" href="./views/contacto.php">Contacto</a></li>
                     <li><a class="enlace" href="./views/preguntas_frecuentes.php">Preguntas</a></li>
-
-                    <?php if (isset($_SESSION["user_data"])): ?>
-                        <li>
-                            <label for="check_menu" class="label_check">
-                                <img src="./assets/iconos/menu.svg" alt="Menú">
-                            </label>
-                        </li>
-                    <?php endif; ?>
                 </ul>
 
-                <?php if (isset($_SESSION["user_data"])): ?>
-
-                    <ul class="navigationBarListUser">
-                        <li><a class="enlace" href="./views/user/solicitudes.php">Solicitudes</a></li>
-                        <li><a class="enlace" href="./views/user/usuarios.php">Usuarios</a></li>
-                        <li><a class="enlace" href="./views/user/empleados.php">Empleados</a></li>
-                        <li><a class="enlace" href="./views/user/perfil.php">Perfil</a></li>
-                        <li><a class="enlace" href="./controllers/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                <?php endif; ?>
             </nav>
         </header>
         <!-- CUERPO PRINCIPAL-->
@@ -94,140 +76,127 @@ if (session_status() == PHP_SESSION_NONE) {
                             <div class="gsap-final-line"></div>
                         </div>
                     </div>
-
                 </div>
-    </div>
-    </section>
+            </section>
 
-    <section class="valores" data-aos="fade-right"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine">
-        <img src="./assets/images/valores.png" alt="valores AK SIENNA SL">
-    </section>
+            <section class="valores" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                <img src="./assets/images/valores.png" alt="valores AK SIENNA SL">
+            </section>
 
-    <!-- CAROUSEL -->
-    <section>
-        <div class="carousel-container" data-aos="fade-up"
-            data-aos-duration="3000">
+            <!-- CAROUSEL -->
+            <section>
+                <div class="carousel-container" data-aos="fade-up"
+                    data-aos-duration="3000">
 
-            <div class="carousel-fade">
+                    <div class="carousel-fade">
 
-                <div class="carousel-slide active">
-                    <img src="./assets/images/1.jpg" alt="AK SIENNA SL">
-                </div>
+                        <div class="carousel-slide active">
+                            <img src="./assets/images/Instalación fotovoltaica 1.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/Instalación fotovoltaica 2.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/empresa/Áreas de Servicio y Capacidad2.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/empresa/Áreas de Servicio y Capacidad1.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/empresa/enfoque-licitacion.jpeg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/empresa/programación de obra (cronograma).jpeg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/Instalación fotovoltaica 6.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/Instalación fotovoltaica 7.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/Instalación fotovoltaica 8.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/Instalación fotovoltaica 9.jpg" alt="AK SIENNA SL">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/Instalación fotovoltaica 10.jpg" alt="AK SIENNA SL">
+                        </div>
 
-                <div class="carousel-slide">
-                    <img src="./assets/images/2.jpg" alt="AK SIENNA SL">
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./assets/images/empresa/Áreas de Servicio y Capacidad2.jpg" alt="AK SIENNA SL">
-                </div>
-                <div class="carousel-slide">
-                    <img src="./assets/images/empresa/Áreas de Servicio y Capacidad1.jpg" alt="AK SIENNA SL">
-                </div>
-                <div class="carousel-slide">
-                    <img src="./assets/images/empresa/Áreas de Servicio y Capacidad3.png" alt="AK SIENNA SL">
-                </div>
-                <div class="carousel-slide">
-                    <img src="./assets/images/empresa/enfoque-licitacion.jpeg" alt="AK SIENNA SL">
-                </div>
-                <div class="carousel-slide">
-                    <img src="./assets/images/empresa/programación de obra (cronograma).jpeg" alt="AK SIENNA SL">
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./assets/images/5.jpg" alt="AK SIENNA SL">
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./assets/images/7.jpg" alt="AK SIENNA SL">
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./assets/images/8.jpg" alt="AK SIENNA SL">
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./assets/images/9.jpg" alt="AK SIENNA SL">
-                </div>
-                <div class="carousel-slide">
-                    <img src="./assets/images/10.jpg" alt="AK SIENNA SL">
-                </div>
-                <div class="carousel-slide">
-                    <img src="./assets/images/11.jpg" alt="AK SIENNA SL">
-                </div>
-                <div class="carousel-slide">
-                    <img src="./assets/images/13.jpg" alt="AK SIENNA SL">
-                </div>
-
-
-                <!-- Flechas -->
-                <button class="carousel-btn prev">&#10094;</button>
-                <button class="carousel-btn next">&#10095;</button>
-
-            </div>
-
-        </div>
-    </section>
-
-    <section class="enlaces-container" data-aos="fade-up"
-        data-aos-anchor-placement="top-center">
-        <h2>Algunas marcas con las que trabajamos</h2>
-
-        <div class="enlaces">
-            <img src="./assets/images/logos_clientes/arquenna.png" alt="AK SIENNA SL">
-            <img src="./assets/images/logos_clientes/austral.png" alt="AK SIENNA SL">
-            <img src="./assets/images/logos_clientes/cabrera.png" alt="AK SIENNA SL">
-            <img src="./assets/images/logos_clientes/caroline.png" alt="AK SIENNA SL">
-        </div>
-    </section>
-
-    </main>
-    <!-- PIE DE PÁGINA-->
-    <footer class="mi_pie">
-
-        <div class="contenedor_footer">
-
-            <!-- TELEFONOS Y CORREO -->
-            <div class="contacto_pie">
-                <ul>
-                    <li>
-                        <img class="iconos" src="./assets/iconos/whatsapp-green.svg  " alt="telefono AK SIENNA SL" width="30" height="30">
-                        <a href="https://wa.me/34602550278" target="_blank">(+34) 602550278</a>
-                    </li>
-                    <li>
-                        <img class="iconos contacto_pie_icono" src="./assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
-                        <a href="mailto:proyectos@aksiennasl.com.es">proyectos@aksiennasl.com.es</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- LOGO AK SIENNA SL -->
-            <div>
-                <div class="logo_pie">
-                    <img src="./assets/images/logo4.png" alt="logo AK SIENNA SL">
-                    <div>
-                        <p>AK SIENNA SL</p>
-                        <span>Instalaciones - Construcciones</span>
-                        <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+                        <!-- Flechas -->
+                        <button class="carousel-btn prev">&#10094;</button>
+                        <button class="carousel-btn next">&#10095;</button>
                     </div>
                 </div>
+            </section>
 
-            </div>
+            <section class="enlaces-container" data-aos="fade-up"
+                data-aos-anchor-placement="top-center">
+                <h2>Algunas marcas con las que trabajamos</h2>
 
-            <!-- NAVBAR PIE -->
-            <div class="navbar_pie">
-                <ul>
-                    <li><a class="enlace" href="#">Inicio</a></li>
-                    <li><a class="enlace" href="./views/empresa.php">Empresa</a></li>
-                    <li><a class="enlace" href="./views/galeria.php">Galería</a></li>
-                    <li><a class="enlace" href="./views/contacto.php">Contacto</a></li>
-                    <li><a class="enlace" href="./views/preguntas_frecuentes.php">Preguntas</a></li>
-                </ul>
+                <div class="enlaces">
+                    <img src="./assets/images/logos_clientes/huawei.png" alt="Huawei AK SIENNA SL">
+                    <img src="./assets/images/logos_clientes/schneider.png" alt="Schneider AK SIENNA SL">
+                    <img src="./assets/images/logos_clientes/legrand.png" alt="Legrand AK SIENNA SL">
+                    <img src="./assets/images/logos_clientes/televes.png" alt="Televes AK SIENNA SL">
+                    <img src="./assets/images/logos_clientes/spit.png" alt="Spit AK SIENNA SL">
+                    <img src="./assets/images/logos_clientes/metabo.jpg" alt="Metabo AK SIENNA SL">
+                    <img src="./assets/images/logos_clientes/tegui.png" alt="Tegui AK SIENNA SL">
+                </div>
+            </section>
+
+        </main>
+        <!-- PIE DE PÁGINA-->
+        <footer class="mi_pie">
+
+            <div class="contenedor_footer">
+
+                <!-- TELEFONOS Y CORREO -->
+                <div class="contacto_pie">
+                    <ul>
+                        <li>
+                            <a href="https://wa.me/34602550278" target="_blank">
+                                <img class="iconos" src="./assets/iconos/whatsapp-green.svg  " alt="telefono AK SIENNA SL" width="30" height="30">
+                                <span>(+34) 602550278</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:proyectos@aksiennasl.com.es">
+                                <img class="iconos contacto_pie_icono" src="./assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
+                                <span>proyectos@aksiennasl.com.es</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- LOGO AK SIENNA SL -->
+                <div>
+                    <div class="logo_pie">
+                        <img src="./assets/images/logo4.png" alt="logo AK SIENNA SL">
+                        <div>
+                            <p>AK SIENNA SL</p>
+                            <span>Instalaciones - Construcciones</span>
+                            <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- NAVBAR PIE -->
+                <div class="navbar_pie">
+                    <ul>
+                        <li><a class="enlace" href="#">Inicio</a></li>
+                        <li><a class="enlace" href="./views/empresa.php">Empresa</a></li>
+                        <li><a class="enlace" href="./views/galeria.php">Galería</a></li>
+                        <li><a class="enlace" href="./views/contacto.php">Contacto</a></li>
+                        <li><a class="enlace" href="./views/preguntas_frecuentes.php">Preguntas</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     </div>
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

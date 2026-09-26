@@ -12,7 +12,12 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK SIENNA SL</title>
+    <title>Galería | AK SIENNA SL</title>
+    <meta
+        name="description"
+        content="Consulta imágenes de proyectos, instalaciones y trabajos realizados por AK SIENNA SL.">
+    <!--<link rel="canonical" href="https://TU-DOMINIO.com/views/galeria.php">-->
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <!-- FAVICON -->
@@ -76,36 +81,36 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2>Galería</h2>
 
             <section class="galeria-container">
-                <div class="galeria" >
-                    <img src="../assets/images/1.jpg" alt="AK SIENNA SL" >
-                    <img src="../assets/images/2.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/3.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/4.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/5.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/6.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/7.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/8.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/9.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/10.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/11.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/12.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/13.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/contratos-documentacion-obra.jpeg" alt="AK SIENNA SL" >
-                    <img src="../assets/images/empresa/enfoque-licitacion.jpeg" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/nosotros.jpeg" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/programación de obra (cronograma).jpeg" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/Propuesta de valor y enfoque.jpeg" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad1.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad2.jpg" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad3.png" alt="AK SIENNA SL">
-                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad4.png" alt="AK SIENNA SL">
+                <div class="galeria">
+                    <img src="../assets/images/Instalación fotovoltaica 1.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 2.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 3.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 4.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 5.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 6.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 7.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 8.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 9.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 10.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Instalación fotovoltaica 11.jpg" alt="AK SIENNA SL">
+                    <img src="../assets/images/Cuadro eléctrico.JPG" alt="AK SIENNA SL">
+                    <img src="../assets/images/Reunión con clientes.JPG" alt="AK SIENNA SL">
+                    <img src="../assets/images/empresa/contratos-documentacion-obra.jpeg" alt="Contratos y documentación obra AK SIENNA SL">
+                    <img src="../assets/images/empresa/enfoque-licitacion.jpeg" alt="Enfoque y licitación AK SIENNA SL">
+                    <img src="../assets/images/empresa/nosotros.jpeg" alt="Nosotros AK SIENNA SL">
+                    <img src="../assets/images/empresa/programación de obra (cronograma).jpeg" alt="Programación de obra (cronograma) AK SIENNA SL">
+                    <img src="../assets/images/empresa/Propuesta de valor y enfoque.jpeg" alt="Propuesta de valor y enfoque AK SIENNA SL">
+                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad1.jpg" alt="Áreas de Servicio y Capacidad1 AK SIENNA SL">
+                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad2.jpg" alt="Áreas de Servicio y Capacidad2 AK SIENNA SL">
+                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad3.png" alt="Áreas de Servicio y Capacidad3 AK SIENNA SL">
+                    <img src="../assets/images/empresa/Áreas de Servicio y Capacidad4.png" alt="Áreas de Servicio y Capacidad4 AK SIENNA SL">
                 </div>
             </section>
 
         </main>
 
         <!-- PIE DE PÁGINA-->
-<footer class="mi_pie">
+        <footer class="mi_pie">
 
             <div class="contenedor_footer">
 
@@ -113,12 +118,16 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="contacto_pie">
                     <ul>
                         <li>
-                            <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="telefono AK SIENNA SL" width="30" height="30">
-                            <a href="https://wa.me/34602550278" target="_blank">(+34) 602550278</a>
+                            <a href="https://wa.me/34602550278" target="_blank">
+                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg  " alt="teléfono AK SIENNA SL" width="30" height="30">
+                                <span>(+34) 602550278</span>
+                            </a>
                         </li>
                         <li>
-                            <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
-                            <a href="mailto:proyectos@aksiennasl.com.es">proyectos@aksiennasl.com.es</a>
+                            <a href="mailto:proyectos@aksiennasl.com.es">
+                                <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
+                                <span>proyectos@aksiennasl.com.es</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

@@ -12,7 +12,11 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK SIENNA SL</title>
+    <title>Empresa | AK SIENNA SL</title>
+    <meta
+        name="description"
+        content="Conoce AK SIENNA SL y nuestra experiencia en instalaciones, construcciones y mantenimiento industrial.">
+    <!--<link rel="canonical" href="https://TU-DOMINIO.com/views/empresa.php">-->
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -178,7 +182,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 <h3>Contratos y Documentación</h3>
                 <div class="contenedor_seccion_empresa_blanco">
                     <div>
-                        <p>
                         <ul>
                             <li>Contrato / Pedido de obra.</li>
                             <li>PSS y Evaluaciones de Riesgo.</li>
@@ -187,9 +190,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <li>Protocolos: aislamiento, continuidad, protecciones.</li>
                             <li>Planos “as built”, manuales y dossier de cierre.</li>
                         </ul>
-                        Estamos convencidos de que esta propuesta reforzará la infraestructura eléctrica y operativa de su proyecto con Grupo Cobra y facilitará un desarrollo <b>seguro y de alto desempeño.</b> Nuestro equipo, liderado por José Antonio Fleitas Martínez, queda a disposición para ajustar cualquier aspecto técnico o de cronograma, alineándonos con sus objetivos. Gracias por su tiempo y consideración.
-
-                        </p>
+                        <p>Estamos convencidos de que esta propuesta reforzará la infraestructura eléctrica y operativa de su proyecto con Grupo Cobra y facilitará un desarrollo <b>seguro y de alto desempeño.</b> Nuestro equipo, liderado por José Antonio Fleitas Martínez, queda a disposición para ajustar cualquier aspecto técnico o de cronograma, alineándonos con sus objetivos. Gracias por su tiempo y consideración.</p>
                     </div>
                     <div>
                         <img src="../assets/images/empresa/contratos-documentacion-obra.jpeg" alt="Contratos y Documentación AK SIENNA SL">
@@ -208,12 +209,16 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="contacto_pie">
                     <ul>
                         <li>
-                            <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="telefono AK SIENNA SL" width="30" height="30">
-                            <a href="https://wa.me/34602550278" target="_blank">(+34) 602550278</a>
+                            <a href="https://wa.me/34602550278" target="_blank">
+                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg  " alt="teléfono AK SIENNA SL" width="30" height="30">
+                                <span>(+34) 602550278</span>
+                            </a>
                         </li>
                         <li>
-                            <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
-                            <a href="mailto:proyectos@aksiennasl.com.es">proyectos@aksiennasl.com.es</a>
+                            <a href="mailto:proyectos@aksiennasl.com.es">
+                                <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
+                                <span>proyectos@aksiennasl.com.es</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

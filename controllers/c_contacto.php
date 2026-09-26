@@ -45,7 +45,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])){
 
     # Intentamos realizar un registro sencillo en "users_data" con los campos a registrar sólo en ella
     try{
-
+                
+        
+        
+            /** 
                 # Se prepara la sentecia SQL para realizar la inserción
                 $fecha_solicitud = date('Y-m-d');
                 $insert_stmt_solicitud_contacto = $mysqli_connection -> prepare("INSERT INTO solicitudes_contacto(nombre, apellido, telefono, email, direccion, texto, fecha_solicitud) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -85,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])){
                         
                    
                     }
-                }
+                }*/
     # SI durante el proceso surge una excepción    
     }catch(Exception $e){
         # Registramos la excepción en el error_log

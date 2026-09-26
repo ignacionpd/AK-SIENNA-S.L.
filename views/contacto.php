@@ -16,7 +16,12 @@ $old = getFlash('old') ?? [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK SIENNA SL</title>
+    <title>Contacto | AK SIENNA SL</title>
+    <meta
+        name="description"
+        content="Contacta a AK SIENNA SL y envía tu mensaje para que se pongan en contacto contigo.">
+
+    <!--<link rel="canonical" href="https://TU-DOMINIO.com/views/contacto.php">-->
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <!-- FAVICON -->
@@ -134,7 +139,7 @@ $old = getFlash('old') ?? [];
 
                         </div>
                     </div>
-                    <div class="container_form">
+                    <!--<div class="container_form">
                         <form id="contacto_form" action="../controllers/c_contacto.php" method="post">
                             <h3>Formulario de contacto</h3>
 
@@ -187,13 +192,13 @@ $old = getFlash('old') ?? [];
                             </div>
 
                         </form>
-                    </div>
+                    </div>-->
                 </div>
             </section>
 
         </main>
         <!-- PIE DE PÁGINA-->
-<footer class="mi_pie">
+        <footer class="mi_pie">
 
             <div class="contenedor_footer">
 
@@ -201,12 +206,16 @@ $old = getFlash('old') ?? [];
                 <div class="contacto_pie">
                     <ul>
                         <li>
-                            <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="telefono AK SIENNA SL" width="30" height="30">
-                            <a href="https://wa.me/34602550278" target="_blank">(+34) 602550278</a>
+                            <a href="https://wa.me/34602550278" target="_blank">
+                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg  " alt="teléfono AK SIENNA SL" width="30" height="30">
+                                <span>(+34) 602550278</span>
+                            </a>
                         </li>
                         <li>
-                            <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
-                            <a href="mailto:proyectos@aksiennasl.com.es">proyectos@aksiennasl.com.es</a>
+                            <a href="mailto:proyectos@aksiennasl.com.es">
+                                <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
+                                <span>proyectos@aksiennasl.com.es</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

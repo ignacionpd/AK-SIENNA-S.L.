@@ -12,7 +12,12 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK SIENNA SL</title>
+    <title>Preguntas frecuentes | AK SIENNA SL</title>
+    <meta
+        name="description"
+        content="Preguntas frecuentes sobre AK SIENNA SL.">
+    <!--<link rel="canonical" href="https://TU-DOMINIO.com/views/preguntas_frecuentes.php">-->
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <!-- FAVICON -->
@@ -38,37 +43,13 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
 
             <nav class="navigationBar">
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-                    <input type="checkbox" id="check_menu" class="check_menu">
-                <?php endif; ?>
-
                 <ul class="navigationBarList">
                     <li><a class="enlace" href="../index.php">Inicio</a></li>
                     <li><a class="enlace" href="./empresa.php">Empresa</a></li>
                     <li><a class="enlace" href="./galeria.php">Galería</a></li>
                     <li><a class="enlace" href="./contacto.php">Contacto</a></li>
                     <li><a class="enlace active" href="#">Preguntas</a></li>
-
-                    <?php if (isset($_SESSION["user_data"])): ?>
-                        <li>
-                            <label for="check_menu" class="label_check">
-                                <img src="../assets/iconos/menu.svg" alt="Menú">
-                            </label>
-                        </li>
-                    <?php endif; ?>
                 </ul>
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-
-                    <ul class="navigationBarListUser">
-                        <li><a class="enlace" href="./user/solicitudes.php">Solicitudes</a></li>
-                        <li><a class="enlace" href="./user/usuarios.php">Usuarios</a></li>
-                        <li><a class="enlace" href="./user/empleados.php">Empleados</a></li>
-                        <li><a class="enlace" href="./user/perfil.php">Perfil</a></li>
-                        <li><a class="enlace" href="../controllers/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                <?php endif; ?>
             </nav>
         </header>
         <!-- CUERPO PRINCIPAL-->
@@ -83,13 +64,8 @@ if (session_status() == PHP_SESSION_NONE) {
                         <a href="#s1" class="faq-link">¿Trabajan sólo en Alicante?</a>
                         <a href="#s2" class="faq-link">¿Dan garantía por los trabajos realizados?</a>
                         <a href="#s3" class="faq-link">¿Qué trabajos realizan?</a>
-                        <a href="#s4" class="faq-link">¿Realizan trámites ante Naturgy?</a>
-                        <a href="#s5" class="faq-link">¿Cuánto demora un trámite de habilitación?</a>
-                        <a href="#s6" class="faq-link">¿Qué documentación necesito para el trámite de rehabilitación de suministro?</a>
-                        <a href="#s7" class="faq-link">¿Cómo es la forma de pago?</a>
-                        <a href="#s8" class="faq-link">¿Hacen urgencias?</a>
-                        <a href="#s9" class="faq-link">¿Puedo ser titular del servicio si no tengo escritura?</a>
-                        <a href="#s10" class="faq-link">¿Qué documentación necesito para hacer cambio de titularidad?</a>
+                        <a href="#s4" class="faq-link">¿Realizan boletines?</a>
+                        <a href="#s5" class="faq-link">¿Hacen urgencias?</a>
                     </nav>
                 </details>
             </div>
@@ -133,70 +109,16 @@ if (session_status() == PHP_SESSION_NONE) {
                 </article>
 
                 <article id="s5" class="faq-section">
-                    <h4>¿Cuánto demora un trámite de habilitación?</h4>
-                    <p><strong>►</strong> Depende del tipo de trabajo y los tiempos de inspección de Naturgy, pero generalmente el proceso puede demorar entre 7 y 20 días hábiles.</p>
-                    <button class="btn_contactar"><a href="./contacto.php">Quiero contactarme</a></button>
-                </article>
-
-                <article id="s6" class="faq-section">
-                    <h4>¿Qué documentación necesito para el trámite de rehabilitación de suministro?</h4>
-                    <ul>
-                        <li><strong>Dirección completa del suministro a rehabilitar</strong> (si es posible, acompañarla con ubicación de Google Maps).</li>
-                        <li><strong>Factura/boleta de gas</strong> (no es necesario que sea la última, sí que figure el actual titular del servicio).</li>
-                        <li><strong>DNI del titular</strong> que figura en la factura (en lo posible escaneado).<br><span> -> Si ud. no es el actual titular del servicio, y no cuenta con el DNI del mismo, dar aviso y le comentaremos cómo proceder</span>.</li>
-                        <li><strong>Teléfono de contacto o celular</strong> del titular.</li>
-                        <li><span>-> Si las cañerías de gas fueron modificadas desde que usted instaló el gas, informarlo.</span></li>
-                        <li><span>-> Si cuenta con algún plano de la vivienda, por favor, enviarlo, ya que acelera el proceso (preferentemente en formato DWG para poder visualizarlo en AutoCAD).</span></li>
-                    </ul>
-                    <button class="btn_contactar"><a href="./contacto.php">Quiero contactarme</a></button>
-                </article>
-
-                <article id="s7" class="faq-section">
-                    <h4>¿Cómo es la forma de pago?</h4>
-                    <p><strong>►</strong> Se solicita un anticipo del 50% para iniciar el trabajo y el saldo restante al finalizar o aprobarse la inspección.</p>
-                    <button class="btn_contactar"><a href="./contacto.php">Quiero contactarme</a></button>
-                </article>
-
-                <article id="s8" class="faq-section">
                     <h4>¿Hacen urgencias?</h4>
                     <p><strong>►</strong> Sí, realizamos visitas urgentes según disponibilidad.</p>
                     <button class="btn_contactar"><a href="./contacto.php">Quiero contactarme</a></button>
                 </article>
-
-                <article id="s9" class="faq-section">
-                    <h4>¿Puedo ser titular del servicio si no tengo escritura?
-                    </h4>
-                    <p><strong>►</strong> Sí. Contáctenos y le comentaremos cómo proceder.</p>
-                    <button class="btn_contactar"><a href="./contacto.php">Quiero contactarme</a></button>
-                </article>
-
-                <article id="s10" class="faq-section">
-                    <h4>¿Qué documentación necesito para hacer cambio de titularidad?</h4>
-                    <ul>
-                        <li><strong>Factura de naturgy</strong> (puede ser antigua)</li>
-                        <li><strong>DNI del futuro titular</strong></li>
-                        <li><strong>Escritura/boleto/contrato</strong> donde figure el futuro titular.<br><span>-> Si no figura la misma numeración que en la factura de naturgy, presentar <strong>certificado de domicilio</strong>. Podés gestionarlo de manera <strong>PRESENCIAL</strong> en el Registro de las Personas, o de manera <strong>ONLINE</strong> haciendo click en el siguiente <a href="https://www.gba.gob.ar/registrodelaspersonas/declaracion_jurada_de_domicilio_tramite_online" target="_blank" style="text-decoration: none;">link</a> del Registro.</span></li>
-                        <li><strong>Email</strong></li>
-                        <li><strong>Teléfono</strong></li>
-                        <li><strong>Foto del medidor</strong> (sólo si se trata de un departamento)*</li>
-                        <li><strong>Constancia de AFIP / Habilitación / Estatuto</strong> (sólo si es cliente COMERCIAL)*</li>
-                        <li><span>-> Si se trata de un <strong>ENTE OFICIAL</strong>, también enviar:</span>
-                            <ul>
-                                <li>Asamblea o Acta donde figure el responsable (presidente o representante)</li>
-                                <li>DNI del responsable</li>
-                                <li>Poder o nombramiento del responsable que demuestre su cargo</li>
-                                <li>Nota solicitando el cambio de titularidad (solicitar nota-modelo)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <button class="btn_contactar"><a href="./contacto.php">Quiero contactarme</a></button>
-                </article>
-
+            
             </section>
 
         </main>
         <!-- PIE DE PÁGINA-->
-<footer class="mi_pie">
+        <footer class="mi_pie">
 
             <div class="contenedor_footer">
 
@@ -204,12 +126,16 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="contacto_pie">
                     <ul>
                         <li>
-                            <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="telefono AK SIENNA SL" width="30" height="30">
-                            <a href="https://wa.me/34602550278" target="_blank">(+34) 602550278</a>
+                            <a href="https://wa.me/34602550278" target="_blank">
+                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg  " alt="teléfono AK SIENNA SL" width="30" height="30">
+                                <span>(+34) 602550278</span>
+                            </a>
                         </li>
                         <li>
-                            <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
-                            <a href="mailto:proyectos@aksiennasl.com.es">proyectos@aksiennasl.com.es</a>
+                            <a href="mailto:proyectos@aksiennasl.com.es">
+                                <img class="iconos contacto_pie_icono" src="../assets/iconos/email.svg" alt="correo AK SIENNA SL" width="94" height="32">
+                                <span>proyectos@aksiennasl.com.es</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -240,7 +166,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </footer>
     </div>
-    
+
     <script src="../assets/scripts/v_preguntas.js"></script>
 </body>
 
