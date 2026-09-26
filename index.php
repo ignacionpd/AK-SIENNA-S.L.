@@ -61,10 +61,15 @@ if (session_status() == PHP_SESSION_NONE) {
 
             <section>
                 <div class="contenedor_presentacion">
-                    <div class="contenedor_presentacion_video">
-                        <video autoplay muted loop playsinline>
+                    <div class="contenedor_presentacion_video video-wrapper">
+
+                        <video id="videoPortada" autoplay muted loop playsinline>
                             <source src="./assets/videos/portada.mov" type="video/mp4">
                         </video>
+
+                        <button class="btn-sonido" type="button">
+                            🔇 Activar sonido
+                        </button>
                     </div>
                     <div class="contenedor_presentacion_texto" data-aos="fade-up">
                         <p><b>AK SIENNA SL</b> ofrece soluciones integrales de electricidad industrial, montaje de cuadros eléctricos y mantenimiento predictivo y correctivo. Nos proyectamos como un socio técnico capaz de ejecutar proyectos de alta complejidad. Nuestros servicios están estratégicamente diseñados para maximizar la eficiencia y la seguridad de sus operaciones, garantizando el cumplimiento normativo y una ejecución precisa.</p>
@@ -216,7 +221,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Tus scripts -->
     <script src="./assets/scripts/scrollTrigger.js"></script>
     <script src="./assets/scripts/carousel.js"></script>
-
+    <script src="./assets/scripts/videos.js"></script>
 
 </body>
 
