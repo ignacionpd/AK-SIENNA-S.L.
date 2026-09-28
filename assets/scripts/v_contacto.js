@@ -9,7 +9,7 @@ const inputText = document.querySelector('#input_text');
 // Definimos las funciones que nos permitirán realizar la validación de los inputs
 function validateName(input_name) {
     const regex = /^(?=.{2,20}$)[A-Za-zÁÉÍÓÚáéíóúÑñ]+( [A-Za-zÁÉÍÓÚáéíóúÑñ]+){0,2}$/u;
-    
+
     const message = "El nombre deberá contener entre 2 y 20 letras y se podrá hacer uso de hasta dos espacios no consecutivos";
 
     return regex.test(input_name) ? true : message;
@@ -17,7 +17,7 @@ function validateName(input_name) {
 
 function validateLastName(input_lastname) {
     const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]{2,20}(?: [A-Za-zÁÉÍÓÚáéíóúÑñ]{2,20})?$/u;
-    
+
     const message = "El/los apellidos deberán contener entre 2 y 20 letras y se podrá hacer uso de un único espacio";
 
     return regex.test(input_lastname) ? true : message;
@@ -88,7 +88,18 @@ if (contacto_form) {
             alert("Por favor, complete correctamente los campos obligatorios");
             e.preventDefault();
         }
+    });
 
+    // Borrar mensajes de error en los SMALL al apretar RESET.
+    contacto_form.addEventListener('reset', function (e) {
+        document.querySelectorAll('.input_error').forEach(function (smallElement) {
+            smallElement.textContent = '';
+            smallElement.classList.remove('error-visible');
+        });
+
+        document.querySelectorAll('.input-error').forEach(function (inputElement) {
+            inputElement.classList.remove('input-error');
+        });
     });
 }
 
