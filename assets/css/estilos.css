@@ -58,7 +58,7 @@ body {
     display: grid;
     width: 100%;
     min-height: 100%;
-    grid-template-rows: auto 1fr 200px;
+    grid-template-rows: auto 1fr minmax(200px, auto);
     grid-template-columns: 100%;
     grid-template-areas:
         "header"
@@ -327,6 +327,37 @@ h3 {
 
 .navbar_pie ul {
     justify-content: flex-end;
+}
+
+/* Crédito "Diseñado por" en la esquina inferior derecha del footer, pegado al borde de la pantalla.
+   Posición absoluta: no ocupa sitio, así que no mueve el menú ni el resto del footer. */
+.mi_pie {
+    position: relative;
+}
+
+.mi_pie .footer__credito {
+    position: absolute;
+    right: 30px;
+    bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.mi_pie .footer__credito img {
+    display: block;
+    width: auto;
+    height: 17px;
+}
+
+.mi_pie .footer__credito:hover,
+.mi_pie .footer__credito:focus-visible {
+    opacity: 1;
 }
 
 /* -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
@@ -1307,6 +1338,7 @@ h2 {
     }
 
 
+
 }
 
 @media (max-width: 1150px) {
@@ -1350,6 +1382,18 @@ h2 {
         font-size: 20px;
         margin: 1em;
     }
+
+    /* Crédito proporcional a los derechos (10px desde aquí hacia abajo) */
+    .mi_pie .footer__credito {
+        left: 30px;
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .mi_pie .footer__credito img {
+        height: 14px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -1638,6 +1682,18 @@ h2 {
         font-size: 10px;
         opacity: 0.5;
         color: white;
+    }
+
+    /* Crédito más pequeño en móvil, proporcional al footer */
+    .mi_pie .footer__credito {
+        left: 20px;
+        bottom: 6px;
+        gap: 4px;
+        font-size: 11px;
+    }
+
+    .mi_pie .footer__credito img {
+        height: 11px;
     }
 }
 

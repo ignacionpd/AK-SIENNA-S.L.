@@ -164,6 +164,9 @@ if (session_status() == PHP_SESSION_NONE) {
                     </ul>
                 </div>
             </div>
+            <a href="https://iprieto.freedev.app" target="_blank" rel="noopener" class="footer__credito" aria-label="Diseñado por Ignacio Prieto (se abre en una pestaña nueva)">
+                Diseñado por <img src="../assets/images/ip-logo.svg" alt="Ignacio Prieto" width="30" height="17">
+            </a>
         </footer>
     </div>
 
