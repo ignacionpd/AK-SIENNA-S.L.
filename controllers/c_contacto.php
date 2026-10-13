@@ -1,6 +1,5 @@
 <?php
 # Vinculamos los archivos necesarios
-require_once 'db_conn.php';
 require_once 'db_functions.php';
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/validations/v_inputData.php';
