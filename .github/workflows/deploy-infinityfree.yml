@@ -1,0 +1,50 @@
+name: Desplegar AK SIENNA en InfinityFree
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Un despliegue cada vez; nunca se corta una subida a medias
+concurrency:
+  group: deploy-aksienna-infinityfree
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v5
+
+      - name: Instalar lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      # --transfer-all: sube todos los archivos en cada despliegue sin comparar fechas
+      # (con --only-newer, la diferencia horaria del FTP de InfinityFree hace que se salte archivos modificados).
+      # Sin --delete: no borra nada del servidor. config/config.php se excluye para conservar la copia del servidor.
+      - name: Subir archivos por FTP
+        env:
+          FTP_HOST: ${{ secrets.INFINITYFREE_FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.INFINITYFREE_FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.INFINITYFREE_FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ secrets.INFINITYFREE_REMOTE_DIR }}
+        run: |
+          lftp --env-password -u "$FTP_USERNAME" "$FTP_HOST" <<LFTP
+          set ftp:ssl-allow no
+          set net:max-retries 3
+          set net:timeout 30
+          mirror --reverse --transfer-all --no-perms --verbose \
+            --exclude=^\.git/ \
+            --exclude=^\.github/ \
+            --exclude=^\.gitignore$ \
+            --exclude=^\.gitattributes$ \
+            --exclude=^specs/ \
+            --exclude=^README\.(md|MD)$ \
+            --exclude=^CLAUDE\.md$ \
+            --exclude=^MEMORY\.md$ \
+            --exclude=^config/config\.php$ \
+            --exclude=\.log$ \
+            ./ "$FTP_REMOTE_DIR"
+          bye
+          LFTP
