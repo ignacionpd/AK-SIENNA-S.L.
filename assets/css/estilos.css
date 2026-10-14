@@ -52,6 +52,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .mi_contenedor {
@@ -301,12 +302,14 @@ h3 {
 .logo_pie p {
     font-size: 30px;
     margin: 0;
+    color: white;
 }
 
 .logo_pie div span {
     font-size: 20px;
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .aviso_legal {
@@ -327,12 +330,6 @@ h3 {
 
 .navbar_pie ul {
     justify-content: flex-end;
-}
-
-/* Crédito "Diseñado por" en la esquina inferior derecha del footer, pegado al borde de la pantalla.
-   Posición absoluta: no ocupa sitio, así que no mueve el menú ni el resto del footer. */
-.mi_pie {
-    position: relative;
 }
 
 .mi_pie .footer__credito {
@@ -1021,6 +1018,121 @@ h2 {
     transform: scale(1.1);
 }
 
+.politicas {
+    display: flex;
+    font-size: 15px;
+}
+
+.check {
+    appearance: none;
+    -webkit-appearance: none;
+    /* compatibilidad Safari */
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 10px;
+    border: 2px solid #999;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.check:checked {
+    background-color: #333;
+    /* o el color que quieras cuando está marcado */
+    border-color: #333;
+}
+
+.check:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.check_link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.politicas_fieldset {
+    justify-self: center;
+    max-width: 800px;
+    margin-top: 50px;
+    border: 3px solid rgb(167, 5, 118);
+}
+
+/* Páginas legales */
+.legal {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 46rem;
+    margin-bottom: 50px;
+}
+
+.legal h2 {
+    margin-top: 2.5rem
+}
+
+.legal ul li a,
+.legal p a {
+    color: black;
+    text-decoration: underline;
+}
+
+.legal table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    overflow-wrap: anywhere
+}
+
+.legal th,
+.legal td {
+    border: 1px solid black;
+    padding: .5rem .6rem;
+    text-align: left;
+    vertical-align: top;
+    color: black;
+}
+
+.legal p,
+.legal li {
+    max-width: none;
+    color: black;
+}
+
+.contenedor_footer_legal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footer__derechos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px 16px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.85rem;
+}
+
+.footer__derechos .aviso_legal {
+    display: inline;
+    font-size: inherit;
+}
+
 /* -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* ESTILOS PREGUNTAS_FRECUENTES.PHP -*-*-*-*-*-*-*-*-*-*-
 -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
@@ -1332,13 +1444,10 @@ h2 {
     .aviso_legal {
         display: flex;
         justify-content: flex-end;
-        font-size: 10px;
+        font-size: 12px;
         opacity: 0.5;
         color: white;
     }
-
-
-
 }
 
 @media (max-width: 1150px) {
@@ -1349,7 +1458,6 @@ h2 {
         gap: 30px;
         margin: 2em;
     }
-
 
     /****FOOTER****/
     .contacto_pie,
@@ -1393,7 +1501,6 @@ h2 {
     .mi_pie .footer__credito img {
         height: 14px;
     }
-
 }
 
 @media (max-width: 768px) {
@@ -1912,6 +2019,10 @@ h2 {
         font-size: 15px;
     }
 
+    .politicas {
+        font-size: 13px;
+    }
+
     /****PREGUNTAS FRECUENTES****/
 
     .faq-dropdown {
@@ -1954,7 +2065,7 @@ h2 {
     .faq-section ul {
         margin: 20px 0;
     }
-        
+
     .faq-section p,
     .faq-section ul li {
         font-size: 16px;
@@ -1974,7 +2085,7 @@ h2 {
 
     /* Footer */
     .contenedor_footer {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr auto 1fr;
     }
 
     .iconos {

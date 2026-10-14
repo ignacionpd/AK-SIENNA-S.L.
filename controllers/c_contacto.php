@@ -1,18 +1,27 @@
 <?php
-# Vinculamos los archivos necesarios
-require_once 'db_functions.php';
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+ini_set('error_log', __DIR__ . '/contacto-errors.log');
+error_reporting(E_ALL & ~E_NOTICE);
+// Incluir/vincular los parámetros de conexión a Gmail y la librería PHPMailer
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Vinculamos los archivos necesarios para las validaciones de los datos ingresados por el usuario
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/validations/v_inputData.php';
 require_once __DIR__ . '/flash.php';
 
 
 # Comprobamos si existe una sesión activa y en caso de que no sea así la creamos.
-if(session_status() == PHP_SESSION_NONE){
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
 # Comprobamos si la información llega a través del método POST y del formulario con submit "contactarse"
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])){
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])) {
     # En primer lugar obtenemos los datos del formulario saneados
     $nombre = htmlspecialchars($_POST['input_name']);
     $apellido = htmlspecialchars($_POST['input_lastname']);
@@ -23,14 +32,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])){
 
     # Validar el formulario a través de la función validar_registro() del controlador "v_inputData"
     $errores_validacion = validar_contacto($nombre, $apellido, $telefono, $email,  $texto);
-     
+
+        // Validar las políticas de privacidad
+    if (($_POST['privacidad'] ?? '') !== '1') {
+        $errores_validacion['politicas'] =
+            'Debe aceptar las políticas de privacidad.';
+    }
+
     # Comprobar si se han generado errores de validacion o no
-    if(!empty($errores_validacion)){
+    if (!empty($errores_validacion)) {
         # Si hay errores de validación vamos a guardarlos en una cadena para mostrarselos al usuario
         $mensaje_error = "";
 
         # Recorremos el array de errores_validación para concatenar los mensajes en la variable $mensaje_error
-        foreach($errores_validacion as $clave => $mensaje){
+        foreach ($errores_validacion as $clave => $mensaje) {
             $mensaje_error .= $mensaje . "<br>";
         }
 
@@ -41,74 +56,122 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])){
         header("Location: ../views/contacto.php");
         exit();
     }
+    $mail = new PHPMailer(true);
 
-    # Intentamos realizar un registro sencillo en "users_data" con los campos a registrar sólo en ella
-    try{
-                
-        
-        
-            /** 
-                # Se prepara la sentecia SQL para realizar la inserción
-                $fecha_solicitud = date('Y-m-d');
-                $insert_stmt_solicitud_contacto = $mysqli_connection -> prepare("INSERT INTO solicitudes_contacto(nombre, apellido, telefono, email, direccion, texto, fecha_solicitud) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                
-                # SI la sentencia NO se ha podido preparar
-                if(!$insert_stmt_solicitud_contacto){
-                    # Se guarda el error de preparación de la sentencia
-                    error_log("No se pudo preparar la sentencia " . $mysqli_connection -> error);
-                    
-                    # Se redirige al usuario a la página de error 500
-                    header('Location: ../views/errors/error500.html');
-                    exit();
-                # SI la sentencia se ha podido preparar   
-                }else{
-                    # Vinculamos los valores introducidos por el usuario a los valores de la sentencia de inserción
-                    $insert_stmt_solicitud_contacto->bind_param("sssssss", $nombre, $apellido, $telefono, $email, $direccion, $texto, $fecha_solicitud);    
+    /*** A continuación cargaremos en la variable $cfg las credenciales SMTP para configurar el PHPMailer. Hay que hacer previamente un archivo ".config.php" dentro de esta carpeta (controllers) para proteger la información del servidor y cargar la siguiente información:
+    return [
+        'smtp_host' => 'smtp.xxxxx.xxxx',
+        'smtp_port' => (puerto SMTP),
+        'smtp_user' => 'dirección de correo electrónico',
+        'smtp_pass' => 'contraseña de aplicación',
+        'to_email'  => 'dirección de correo electrónico',
+    ]; ****/
+    $cfg = require __DIR__ . '/.config.php';
 
-                    # SI la sentencia se ha podido ejecutar
-                    if(!$insert_stmt_solicitud_contacto -> execute()){
-                    # Se guarda el error de ejecución de la sentencia
-                    error_log("No se pudo ejecutar la sentencia " . $mysqli_connection -> error);
-                    
-                    # Se redirige al usuario a la página de error 500
-                    header('Location: ../views/errors/error500.html');
-                    exit();
+    try {
 
-                # SI la sentencia se ha podido preparar   
-                    }else{
+        // Utilizar SMTP
+        $mail->isSMTP();
 
-                    # Cerramos la sentencia
-                    $insert_stmt_solicitud_contacto -> close();
-                        
-                        # Configuramos un mensaje de éxito para el usuario y le redirigimos a la página de registro.
-                        $_SESSION['mensaje_exito'] = "EXITO: La solcitud de contacto se ha registrado correctamente";
-                        header("Location: ../views/contacto.php?mensaje=ok");
-                        exit();
-                        
-                   
-                    }
-                }*/
-    # SI durante el proceso surge una excepción    
-    }catch(Exception $e){
+        // Servidor SMTP de Gmail
+        $mail->Host = $cfg['smtp_host'];
+
+        // Activar autenticación SMTP
+        $mail->SMTPAuth = true;
+
+        // Cuenta de Gmail autenticada
+        $mail->Username = $cfg['smtp_user'];
+
+        // Nueva contraseña de aplicación
+        $mail->Password = $cfg['smtp_pass'];
+
+        // Seguridad TLS
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
+        // Puerto SMTP
+        $mail->Port = $cfg['smtp_port'];
+
+        $mail->CharSet = 'UTF-8';
+
+        // El remitente debe coincidir con la cuenta autenticada
+        $mail->setFrom(
+            $cfg['smtp_user'],
+            'Formulario de contacto'
+        );
+
+        // Destinatario
+        $mail->addAddress($cfg['to_email']);
+
+        // Permite responder directamente al usuario
+        $mail->addReplyTo(
+            $email,
+            $nombre . ' ' . $apellido
+        );
+
+        // Contenido del correo
+        $mail->isHTML(true);
+
+        $mail->Subject =
+            'Formulario de contacto - ' . $nombre . ' ' . $apellido;
+
+        $mail->Body = "
+        <h2>Nueva solicitud de contacto</h2>
+
+        <p>
+            <strong>Nombre:</strong> $nombre
+        </p>
+
+        <p>
+            <strong>Apellido:</strong> $apellido
+        </p>
+
+        <p>
+            <strong>Teléfono:</strong> $telefono
+        </p>
+
+        <p>
+            <strong>Dirección:</strong> $direccion
+        </p>
+
+        <p>
+            <strong>Email:</strong> $email
+        </p>
+
+        <hr>
+
+        <p>
+            <strong>Mensaje:</strong>
+        </p>
+
+        <p>
+            " . nl2br($texto) . "
+        </p>
+    ";
+
+        $mail->send();
+
+        header('Location: ../views/contacto.php?mensaje=ok');
+
+        $_SESSION['mensaje_exito'] = 'ÉXITO: La solicitud de contacto se ha enviado correctamente.';
+
+        exit();
+        # SI durante el proceso surge una excepción    
+    } catch (Exception $e) {
         # Registramos la excepción en el error_log
-        error_log("Error en c_contacto.php" . $e -> getMessage());
+        error_log("Error en c_contacto.php" . $e->getMessage());
         # Redirigimos al usuario a la página de error 500
         header('Location: ../views/errors/error500.html');
-    
-    # Independientemente de si se genera una excepción o no al final siempre se realizará el siguiente código
-    }finally{
+
+        # Independientemente de si se genera una excepción o no al final siempre se realizará el siguiente código
+    } finally {
         # Cerramos la consulta si aún sigue abierta
-        if(isset($insert_stmt_solicitud_contacto) && ($insert_stmt_solicitud_contacto)){
-            $insert_stmt_solicitud_contacto -> close();
+        if (isset($insert_stmt_solicitud_contacto) && ($insert_stmt_solicitud_contacto)) {
+            $insert_stmt_solicitud_contacto->close();
         }
 
         # Cerramos la conexión a la base de datos si aún sigue abierta
-        if(isset($mysqli_connection) && ($mysqli_connection)){
-            $mysqli_connection -> close();
+        if (isset($mysqli_connection) && ($mysqli_connection)) {
+            $mysqli_connection->close();
         }
-
     }
 }
-
-
-?>

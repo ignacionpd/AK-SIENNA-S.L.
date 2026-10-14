@@ -47,37 +47,12 @@ $old = getFlash('old') ?? [];
             </div>
 
             <nav class="navigationBar">
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-                    <input type="checkbox" id="check_menu" class="check_menu">
-                <?php endif; ?>
-
                 <ul class="navigationBarList">
                     <li><a class="enlace" href="../index.php">Inicio</a></li>
                     <li><a class="enlace" href="./empresa.php">Empresa</a></li>
                     <li><a class="enlace" href="./galeria.php">Galería</a></li>
                     <li><a class="enlace active" href="#">Contacto</a></li>
                     <li><a class="enlace" href="./preguntas_frecuentes.php">Preguntas</a></li>
-
-                    <?php if (isset($_SESSION["user_data"])): ?>
-                        <li>
-                            <label for="check_menu" class="label_check">
-                                <img src="../assets/iconos/menu.svg" alt="Menú">
-                            </label>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-
-                    <ul class="navigationBarListUser">
-                        <li><a class="enlace" href="./user/solicitudes.php">Solicitudes</a></li>
-                        <li><a class="enlace" href="./user/usuarios.php">Usuarios</a></li>
-                        <li><a class="enlace" href="./user/empleados.php">Empleados</a></li>
-                        <li><a class="enlace" href="./user/perfil.php">Perfil</a></li>
-                        <li><a class="enlace" href="../controllers/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                <?php endif; ?>
             </nav>
         </header>
         <!-- CUERPO PRINCIPAL-->
@@ -139,7 +114,7 @@ $old = getFlash('old') ?? [];
 
                         </div>
                     </div>
-                    <!--<div class="container_form">
+                    <div class="container_form">
                         <form id="contacto_form" action="../controllers/c_contacto.php" method="post">
                             <h3>Formulario de contacto</h3>
 
@@ -185,6 +160,13 @@ $old = getFlash('old') ?? [];
                                     <small class="input_error"></small>
                                 </div>
                             </div>
+                            <div class="politicas">
+                                <input type="checkbox" id="privacidad" name="privacidad" value="1" class="check" required>
+                                <div class="input_zone">
+                                    <span>Acepto las <a href="./politicas_de_privacidad.html" class="check_link" target="_blank">políticas de privacidad.</a></span>
+                                    <small class="input_error"></small>
+                                </div>
+                            </div>
 
                             <div class="form_buttons">
                                 <input type="reset" class="btn_reset" value="Borrar">
@@ -192,7 +174,7 @@ $old = getFlash('old') ?? [];
                             </div>
 
                         </form>
-                    </div>-->
+                    </div>
                 </div>
             </section>
 
