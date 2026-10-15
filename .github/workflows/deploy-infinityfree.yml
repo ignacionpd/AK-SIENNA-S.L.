@@ -45,9 +45,14 @@ jobs:
             --exclude=^controllers/\.config\.php$ \
             --exclude=^controllers/config\.php$ \
             --exclude=^controllers/\.env\.php$ \
-            --exclude=^\.env(\..*)?$ \
+            --exclude=^\.env$ \
+            --exclude=^\.env\..*$ \
             --exclude=^controllers/vendor/phpmailer/phpmailer/\.git$ \
-            --exclude=^controllers/vendor/phpmailer/phpmailer/(\.github|\.phan|docs|examples|test)/ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/\.github/ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/\.phan/ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/docs/ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/examples/ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/test/ \
             --exclude=^controllers/vendor/phpmailer/phpmailer/get_oauth_token\.php$ \
             --exclude=^specs/ \
             --exclude=^README\.md$ \
@@ -55,7 +60,12 @@ jobs:
             --exclude=^CLAUDE\.md$ \
             --exclude=^MEMORY\.md$ \
             --exclude=^config/config\.php$ \
-            --exclude=\.(log|sql|pem|key|p12|pfx)$ \
+            --exclude=\.log$ \
+            --exclude=\.sql$ \
+            --exclude=\.pem$ \
+            --exclude=\.key$ \
+            --exclude=\.p12$ \
+            --exclude=\.pfx$ \
             ./ "$FTP_REMOTE_DIR"
           bye
           LFTP
