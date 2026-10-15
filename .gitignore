@@ -1,0 +1,18 @@
+.vscode/
+
+# Configuración privada y secretos locales.
+/controllers/.config.php
+/controllers/config.php
+/controllers/.env.php
+/.env
+/.env.*
+**/.env
+**/.env.*
+
+# Registros, copias de seguridad y material de claves privadas.
+*.log
+*.sql
+*.pem
+*.key
+*.p12
+*.pfx

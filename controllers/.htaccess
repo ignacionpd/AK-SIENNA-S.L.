@@ -1,0 +1,10 @@
+Options -Indexes
+
+<FilesMatch "^(\.config\.php|config\.php|\.env(\..*)?|.*\.(log|sql|pem|key|p12|pfx))$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^vendor(/|$) - [F,L]
+</IfModule>

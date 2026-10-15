@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Descargar el código
         uses: actions/checkout@v5
+        with:
+          submodules: recursive
 
       - name: Instalar lftp
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
@@ -38,14 +40,22 @@ jobs:
             --exclude=^\.git/ \
             --exclude=^\.github/ \
             --exclude=^\.gitignore$ \
+            --exclude=^\.gitmodules$ \
             --exclude=^\.gitattributes$ \
+            --exclude=^controllers/\.config\.php$ \
+            --exclude=^controllers/config\.php$ \
+            --exclude=^controllers/\.env\.php$ \
+            --exclude=^\.env(\..*)?$ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/\.git$ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/(\.github|\.phan|docs|examples|test)/ \
+            --exclude=^controllers/vendor/phpmailer/phpmailer/get_oauth_token\.php$ \
             --exclude=^specs/ \
             --exclude=^README\.md$ \
             --exclude=^README\.MD$ \
             --exclude=^CLAUDE\.md$ \
             --exclude=^MEMORY\.md$ \
             --exclude=^config/config\.php$ \
-            --exclude=\.log$ \
+            --exclude=\.(log|sql|pem|key|p12|pfx)$ \
             ./ "$FTP_REMOTE_DIR"
           bye
           LFTP
