@@ -88,16 +88,13 @@ if (session_status() == PHP_SESSION_NONE) {
                 <article id="s3" class="faq-section">
                     <h4>¿Qué trabajos realizan?</h4>
                     <ul>
-                        <li>Instalaciones internas de gas natural doméstico, comercial o industrial (instaladores matriculados de primera y segunda categoría).</li>
-                        <li>Asesoramiento - Cálculo de diámetro de cañería.</li>
-                        <li>Trámites de habilitación y rehabilitación. Inspecciones parciales y finales.</li>
-                        <li>Extensiones de red externa para gas natural / Gestión de factibilidad.</li>
-                        <li>Pruebas de hermeticidad.</li>
-                        <li>Confección de Planos (incluyendo planos de combustión).</li>
-                        <li>Certificacion/Relevamiento de instalación interna para gas natural. Regularización de instalaciones observadas.</li>
-                        <li>Colocación, reemplazo y reparación de artefactos.</li>
+                        <li>Instalaciones eléctricas residenciales, comerciales o industriales.</li>
+                        <li>Asesoramiento - Cálculo de instalación.</li>
+                        <li>Incidencias eléctricas y de fontanería.</li>
+                        <li>Instalación y resolución de problemas de sistemas fotovoltaicos.</li>
                         <li>Mantenimiento de instalaciones.</li>
-                        <li>Gestiones administrativas - atención al cliente/matriculado (cambios de titularidad, bajas de servicio, renovación de matrículas, etc).</li>
+                        <li>Realización de Boletines (siempre que la instalación la hayamos ejecutado nosotros).</li>
+                        <li>También nos encargamos de la reforma integral de tu proyecto ocupándonos de los rubros necesarios para ello.</li>
                     </ul>
                     <button class="btn_contactar"><a href="./contacto.php">Quiero contactarme</a></button>
                 </article>

@@ -460,7 +460,7 @@ h3 {
 
 .input_zone textarea {
     height: 150px;
-    /* Alto fijo en píxeles */
+    font-family: sans-serif;
 }
 
 .password_show {
